@@ -7,3 +7,5 @@ ON MI TADY NĚKDO UDĚLÁ VZDÁLENOU ZMĚNU A JÁ V LOCALU POUNÁM H..O
 toto je ještě lepší nadpis
 
 toto je dobrý nadpiss = jdeme řešit konflikty
+
+TAKO CO SAKRA, JÁ CHCI KONFLIKT :D
