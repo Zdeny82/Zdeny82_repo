@@ -1,0 +1,1 @@
+print("musím sem napsat nejaky kod at je co gitovat")
