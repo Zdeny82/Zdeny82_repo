@@ -5,3 +5,5 @@ přidám mezeru a npíšu nějakou zěmnu, kterou si chci přečíst na githubu 
 ON MI TADY NĚKDO UDĚLÁ VZDÁLENOU ZMĚNU A JÁ V LOCALU POUNÁM H..O
 
 toto je dobrý nadpiss = jdeme řešit konflikty
+
+TAKO CO SAKRA, JÁ CHCI KONFLIKT :D
