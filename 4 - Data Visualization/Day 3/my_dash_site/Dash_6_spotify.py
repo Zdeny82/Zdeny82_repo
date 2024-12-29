@@ -4,7 +4,7 @@ import plotly.express as px
 from dash import dcc
 from dash import html
 from dash.dependencies import Output, Input, State
-import pandas as pd   
+import pandas as pd    
 
 
 
