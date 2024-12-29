@@ -6,7 +6,7 @@ from dash import html
 from dash.dependencies import Output, Input, State
 import pandas as pd    
 
-
+ 
 
 spoty_df = pd.read_csv('my_dash_site\spotify_top100.csv')
 spoty_df = spoty_df.dropna()
