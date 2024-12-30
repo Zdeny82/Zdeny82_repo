@@ -8,7 +8,7 @@ import pandas as pd
  
  
 
-spoty_df = pd.read_csv('App_dash_web/spotify_top100.csv')
+spoty_df = pd.read_csv('spotify_top100.csv')
 spoty_df = spoty_df.dropna()
 
 numeric_cols = spoty_df.select_dtypes(include=['float', 'int']).columns
