@@ -77,8 +77,10 @@ def update_function(slider_value, dropd_value):
     
     return figure
     
+# Pokud je to pro lokální testování:
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port= 3500, debug=True)
+    app.run(debug=True) 
+
 
 
 
