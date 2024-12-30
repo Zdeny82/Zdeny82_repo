@@ -58,7 +58,6 @@ def update_function(slider_value, dropd_value):
     # print(f"Dropdown Value: {dropd_value}")
     
     numeric_columns = list(spoty_df[['nrgy', 'dB', 'live', 'val', 'dnce']].columns)
-
     
     filtered_df = spoty_df[spoty_df['top year'] == int(slider_value)]
 
@@ -78,8 +77,8 @@ def update_function(slider_value, dropd_value):
     return figure
     
 # Pokud je to pro lokální testování:
-if __name__ == '__main__':
-    app.run(debug=True) 
+# if __name__ == '__main__':
+#    app.run(debug=True) 
 
 
 
