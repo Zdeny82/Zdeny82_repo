@@ -22,6 +22,9 @@ spoty_df_list
 
 app = dash.Dash(__name__)
 
+# Přidání Flask serveru pro Gunicorn
+server = app.server
+
 app.layout = html.Div(children=
                       [
                         html.H1(id='h1', children='Spotify top 100'),
