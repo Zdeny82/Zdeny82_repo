@@ -3,7 +3,8 @@ import base64
 import plotly.express as px
 import pandas as pd 
  
-df = pd.read_csv('All_F1_Races.csv')
+df = pd.read_csv('App_dashboard_2\All_F1_Races.csv')
+df = df[['season','raceName','position','points','results.laps','Full Name','nationality.1']]
 
 app = Dash(__name__)
 
@@ -16,7 +17,7 @@ def load_image(image_path):
         encoded_image = base64.b64encode(f.read()).decode()
     return f"data:image/jpeg;base64,{encoded_image}"
 
-image_path = 'fotom.png'
+image_path = r'App_dashboard_2\foto.png'
 encoded_image = load_image(image_path)
 
 app.layout = html.Div(style={'border': '1px solid black', 'padding': '10px', 'width': '99%'}, 
@@ -30,7 +31,6 @@ app.layout = html.Div(style={'border': '1px solid black', 'padding': '10px', 'wi
         'fontFamily': 'Arial, sans-serif',  # Moderní typ písma
         'fontWeight': 'bold',  # Tloušťka písma
         'color': 'grey',  # Barva textu
-        
         'borderRadius': '8px',  # Zakulacené rohy
         'padding': '10px 20px',  # Vnitřní odsazení
         'boxShadow': '0 4px 8px rgba(0, 0, 0, 0.2)',  # Stín
@@ -120,7 +120,5 @@ def update_function(dropd_value):
     return figure
 
 # pro lokální testování
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port= 8050, debug=True)
-
-
+# if __name__ == '__main__':
+#     app.run(host='127.0.0.1', port= 8050, debug=True)
