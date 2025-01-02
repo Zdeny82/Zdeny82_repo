@@ -104,10 +104,14 @@ def update_function(dropd_value):
     # print(f"Slider Value: {slider_value}")
     # print(f"Dropdown Value: {dropd_value}")
             
-    figure = px.bar(data_frame=df,
+    figure = px.scatter(data_frame=df,
                     x = 'Full Name', 
                     y = dropd_value,
+                    color='nationality.1',
+                    size='results.laps',
+                    size_max=70,
                     height=800)
+
     
     layout_updates = dict(
         xaxis=dict(
@@ -120,5 +124,5 @@ def update_function(dropd_value):
     return figure
 
 # pro lokální testování
-# if __name__ == '__main__':
-#     app.run(host='127.0.0.1', port= 8050, debug=True)
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port= 8050, debug=True)
