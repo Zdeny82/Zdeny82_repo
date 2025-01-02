@@ -1,7 +1,7 @@
 from dash import Dash, dcc, html, dash_table, Input, Output
 import base64
 import plotly.express as px
-import pandas as pd
+import pandas as pd 
  
 df = pd.read_csv('All_F1_Races.csv')
 
