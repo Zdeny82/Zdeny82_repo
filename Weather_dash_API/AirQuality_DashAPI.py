@@ -288,7 +288,8 @@ app.layout = dbc.Container(
                     html.Div(
                         dcc.Graph(
                             id="my-graph",
-                            figure=fig
+                            figure=fig,
+                            responsive=True
                             
                         )
                     ),
@@ -302,7 +303,8 @@ app.layout = dbc.Container(
                     html.Div(
                         dcc.Graph(
                             id="my-graph_2",
-                            figure=fig_2
+                            figure=fig_2,
+                            responsive=True
                             
                         )
                     ),
