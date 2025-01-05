@@ -356,7 +356,7 @@ app.layout = dbc.Container(
                     id="city-table",
                     columns=[{"name": col, "id": col} for col in df_to_show.columns],
                     data=[],
-                    
+                    style_table={"overflowX": "auto"},  # Povolit horizontální posun
                     style_cell={"textAlign": "left"}  # Zarovnání textu doleva
                 ),
                 style={
