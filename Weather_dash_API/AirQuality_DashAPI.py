@@ -282,41 +282,26 @@ app.layout = dbc.Container(
 
         # Row kontejner pro graf i graf 2
         dbc.Row(
-            [
-                # Sloupec pro graf
-                dbc.Col(
-                    html.Div(
+                [
+                    dbc.Col(
                         dcc.Graph(
                             id="my-graph",
                             figure=fig,
-                            responsive=True  # Povolit responzivní přizpůsobení
-                        )
+                            responsive=True
+                        ),
+                        width=12,  # Celý řádek na menších obrazovkách
                     ),
-                    width=6,  # Šířka sloupce pro graf (z celkových 12)
-                ),
-            
-            # Sloupec pro graf II
-                dbc.Col(
-                    html.Div(
+                    dbc.Col(
                         dcc.Graph(
                             id="my-graph_2",
                             figure=fig_2,
-                            responsive=True  # Povolit responzivní přizpůsobení
-                        )
+                            responsive=True
+                        ),
+                        width=12,  # Celý řádek na menších obrazovkách
                     ),
-                    style={
-                        "display": "flex",
-                        "justify-content": "center",
-                        "align-items": "center"},
-                    width=6, # Šířka sloupce pro graf (z celkových 12)
-                ),
-            ],
-            style={
-                        "display": "flex",
-                        "justify-content": "center",
-                        "align-items": "center"},
-            className="mb-4"  # Odsazení mezi řádky
-        ),
+                ],
+                className="mb-4",
+            ),
 
         # Sloupec pro dropdown
         dbc.Row(
