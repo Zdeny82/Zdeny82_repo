@@ -294,7 +294,7 @@ app.layout = dbc.Container(
                     ),
                     style={
                         },
-                    width=6,  # Šířka sloupce pro graf (z celkových 12)
+                    xs=12, sm=12, md=6, lg=6, xl=6,  # Responsivní šířky sloupce
                 ),
             
             # Sloupec pro graf II
@@ -308,7 +308,7 @@ app.layout = dbc.Container(
                     ),
                     style={
                         },
-                    width=6, # Šířka sloupce pro graf (z celkových 12)
+                    xs=12, sm=12, md=6, lg=6, xl=6,  # Responsivní šířky sloupce
                 ),
             ],
             style={
