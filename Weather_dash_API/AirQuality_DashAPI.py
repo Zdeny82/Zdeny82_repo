@@ -365,6 +365,12 @@ app.layout = dbc.Container(
                         "justify-content": "center",  # Zarovnání obsahu na střed
                     },
                 width=12,
+                style_table={
+                            "overflowX": "auto",  # Horizontální posouvání
+                            "overflowY": "auto",  # Vertikální posouvání
+                            "maxWidth": "100%",  # Omezte šířku na 100% rodičovského kontejneru
+                            "maxHeight": "300px",  # Nastavte maximální výšku
+                            }
             )
         )
     
