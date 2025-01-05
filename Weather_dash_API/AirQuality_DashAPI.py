@@ -288,7 +288,8 @@ app.layout = dbc.Container(
                     html.Div(
                         dcc.Graph(
                             id="my-graph",
-                            figure=fig
+                            figure=fig,
+                            responsive=True  # Povolit responzivní přizpůsobení
                         )
                     ),
                     width=6,  # Šířka sloupce pro graf (z celkových 12)
@@ -299,7 +300,8 @@ app.layout = dbc.Container(
                     html.Div(
                         dcc.Graph(
                             id="my-graph_2",
-                            figure=fig_2
+                            figure=fig_2,
+                            responsive=True  # Povolit responzivní přizpůsobení
                         )
                     ),
                     style={
