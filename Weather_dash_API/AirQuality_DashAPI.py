@@ -216,7 +216,7 @@ app.layout = dbc.Container(
                 dbc.Col(
                     dbc.Card(
                         [
-                            dbc.CardHeader(f'Praha {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'time'].values.squeeze()}'),
+                            dbc.CardHeader(f"Praha {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'time'].values.squeeze()}"),
                             dbc.CardBody(
                                 [
                                     html.H5(f'PM2.5: {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'pm2_5'].iloc[0]} µg/m³', className="card-title"),
@@ -232,7 +232,7 @@ app.layout = dbc.Container(
                 dbc.Col(
                     dbc.Card(
                         [
-                            dbc.CardHeader(f'Brno {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'time'].values.squeeze()}'),
+                            dbc.CardHeader(f"Brno {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'time'].values.squeeze()}"),
                             dbc.CardBody(
                                 [
                                     html.H5(f'PM2.5: {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'pm2_5'].iloc[0]} µg/m³', className="card-title"),
@@ -460,7 +460,7 @@ def update_map(selected_indicator):
 def update_dynamic_card(selected_city):
     
     return [
-        dbc.CardHeader(f'{selected_city} {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'time'].values.squeeze()}'),
+        dbc.CardHeader(f"{selected_city} {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'time'].values.squeeze()}"),
         dbc.CardBody(
             [
                 html.H5(f'PM2.5: {df_to_show.loc[df_to_show['town_name'] == selected_city, 'pm2_5'].iloc[0]} µg/m³', className="card-title"),
