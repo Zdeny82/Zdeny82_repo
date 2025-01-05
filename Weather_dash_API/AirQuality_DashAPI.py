@@ -350,36 +350,23 @@ app.layout = dbc.Container(
         ),
 
         # Tabulka
-        # Tabulka
-# Tabulka
-dbc.Row(
-    dbc.Col(
-        dash_table.DataTable(
-            id="city-table",
-            columns=[{"name": col, "id": col} for col in df_to_show.columns],
-            data=[],
-            style_table={"overflowX": "auto"},  # Povolit horizontální posun
-            style_cell={
-                "textAlign": "left",  # Zarovnání textu doleva
-                "whiteSpace": "normal",  # Povolit zalamování textu
-                "overflow": "hidden",  # Skrytí textu, pokud přesahuje
-                "textOverflow": "ellipsis",  # Přidat "..." na konec přetékajícího textu
-                "maxWidth": "150px",  # Maximální šířka sloupce
-            },
-            style_data={
-                "whiteSpace": "normal",
-                "height": "auto",  # Automatická výška řádku
-            },
-        ),
-        style={
-            "display": "flex",
-            "justify-content": "center",  # Zarovnání obsahu na střed
-        },
-        width=12,
-    )
-)
-
-
+        dbc.Row(
+            dbc.Col(
+                dash_table.DataTable(
+                    id="city-table",
+                    columns=[{"name": col, "id": col} for col in df_to_show.columns],
+                    data=[],
+                    
+                    style_cell={"textAlign": "left"}  # Zarovnání textu doleva
+                ),
+                style={
+                        "display": "flex",
+                        
+                        "justify-content": "center",  # Zarovnání obsahu na střed
+                    },
+                width=12,
+            )
+        )
     
     ],
     fluid=True,
