@@ -351,35 +351,34 @@ app.layout = dbc.Container(
 
         # Tabulka
         # Tabulka
+# Tabulka
 dbc.Row(
-    [
-        # První část tabulky
-        dbc.Col(
-            dash_table.DataTable(
-                id="city-table-part1",
-                columns=[{"name": col, "id": col} for col in df_to_show.iloc[:, :int(len(df_to_show.columns)/2)].columns],
-                data=[],  # Data můžete dynamicky plnit přes callback
-                style_cell={"textAlign": "left", "whiteSpace": "normal"},  # Zarovnání textu a zalomení
-                style_table={"overflowX": "auto"},  # Povolit horizontální scroll
-            ),
-            xs=12, sm=12, md=6, lg=6, xl=6,  # Responsivní šířky sloupce
+    dbc.Col(
+        dash_table.DataTable(
+            id="city-table",
+            columns=[{"name": col, "id": col} for col in df_to_show.columns],
+            data=[],
+            style_table={"overflowX": "auto"},  # Povolit horizontální posun
+            style_cell={
+                "textAlign": "left",  # Zarovnání textu doleva
+                "whiteSpace": "normal",  # Povolit zalamování textu
+                "overflow": "hidden",  # Skrytí textu, pokud přesahuje
+                "textOverflow": "ellipsis",  # Přidat "..." na konec přetékajícího textu
+                "maxWidth": "150px",  # Maximální šířka sloupce
+            },
+            style_data={
+                "whiteSpace": "normal",
+                "height": "auto",  # Automatická výška řádku
+            },
         ),
-
-        # Druhá část tabulky
-        dbc.Col(
-            dash_table.DataTable(
-                id="city-table-part2",
-                columns=[{"name": col, "id": col} for col in df_to_show.iloc[:, int(len(df_to_show.columns)/2):].columns],
-                data=[],  # Data můžete dynamicky plnit přes callback
-                style_cell={"textAlign": "left", "whiteSpace": "normal"},  # Zarovnání textu a zalomení
-                style_table={"overflowX": "auto"},  # Povolit horizontální scroll
-            ),
-            xs=12, sm=12, md=6, lg=6, xl=6,  # Responsivní šířky sloupce
-        ),
-    ],
-    style={"display": "flex", "flex-wrap": "wrap", "justify-content": "center"},  # Zalomení na menších zařízeních
-    className="mb-4"  # Odsazení mezi řádky
+        style={
+            "display": "flex",
+            "justify-content": "center",  # Zarovnání obsahu na střed
+        },
+        width=12,
+    )
 )
+
 
     
     ],
