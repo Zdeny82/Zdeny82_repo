@@ -145,7 +145,7 @@ def load_image(image_path):
         encoded_image = base64.b64encode(f.read()).decode()
     return f"data:image/jpeg;base64,{encoded_image}"
 
-image_path = r'C:\Users\Stepankovi\Dropbox\CODERS\4 - Data Visualization\Day 4\Zdeny82_repo\Weather_dash_API\foto.png'
+image_path = 'foto.png'
 encoded_image = load_image(image_path)
 
 # DataFrame ze slovníku
@@ -497,5 +497,5 @@ def update_table(selected_city):
     filtered_df = df_to_show[df_to_show['town_name'] == selected_city]
     return filtered_df.to_dict("records")
 
-if __name__ == "__main__":
-   app.run_server(host="127.0.0.1", port=8050, debug=True)
+# if __name__ == "__main__":
+#    app.run_server(host="127.0.0.1", port=8050, debug=True)
