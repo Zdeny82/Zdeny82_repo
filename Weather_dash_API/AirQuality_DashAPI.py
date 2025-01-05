@@ -282,44 +282,42 @@ app.layout = dbc.Container(
 
         # Row kontejner pro graf i graf 2
         dbc.Row(
-                [
-                    # Sloupec pro graf
-                    dbc.Col(
-                        html.Div(
-                            dcc.Graph(
-                                id="my-graph",
-                                figure=fig,
-                                responsive=True  # Povolit responzivní přizpůsobení
-                            )
-                        ),
-                        width=6,  # Šířka sloupce pro graf (z celkových 12)
+            [
+                # Sloupec pro graf
+                dbc.Col(
+                    html.Div(
+                        dcc.Graph(
+                            id="my-graph",
+                            figure=fig,
+                            responsive=True  # Povolit responzivní přizpůsobení
+                        )
                     ),
-
-                    # Sloupec pro graf II
-                    dbc.Col(
-                        html.Div(
-                            dcc.Graph(
-                                id="my-graph_2",
-                                figure=fig_2,
-                                responsive=True  # Povolit responzivní přizpůsobení
-                            )
-                        ),
-                        style={
-                            "display": "flex",
-                            "justify-content": "center",
-                            "align-items": "center"
-                        },
-                        width=6,  # Šířka sloupce pro graf (z celkových 12)
+                    width=6,  # Šířka sloupce pro graf (z celkových 12)
+                ),
+            
+            # Sloupec pro graf II
+                dbc.Col(
+                    html.Div(
+                        dcc.Graph(
+                            id="my-graph_2",
+                            figure=fig_2,
+                            responsive=True  # Povolit responzivní přizpůsobení
+                        )
                     ),
-                ],
-                style={
-                    "display": "flex",
-                    "justify-content": "center",
-                    "align-items": "center"
-                },
-                className="mb-4"  # Odsazení mezi řádky
-            ),
-
+                    style={
+                        "display": "flex",
+                        "justify-content": "center",
+                        "align-items": "center"},
+                    width=6, # Šířka sloupce pro graf (z celkových 12)
+                ),
+            ],
+            style={
+                        "display": "flex",
+                        "flex-wrap": "wrap",
+                        "justify-content": "center",
+                        "align-items": "center"},
+            className="mb-4"  # Odsazení mezi řádky
+        ),
 
         # Sloupec pro dropdown
         dbc.Row(
