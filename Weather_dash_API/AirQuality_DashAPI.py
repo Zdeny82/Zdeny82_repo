@@ -69,13 +69,13 @@ df_to_show = combined_df.copy()
 df_to_show.rename(columns={"current.time": "time", 'current.interval': 'interval', 'current.pm10': 'pm10', 'current_units.pm10': 'pm10_u',
                     'current.pm2_5': 'pm2_5', 'current_units.pm2_5': 'pm2_5_u', 'current_units.interval': 'interval_u', 
                     'current.carbon_monoxide':'CO',
-                    'current_units.carbon_monoxide': 'carbon_monoxide_u',
+                    'current_units.carbon_monoxide': 'CO_u',
                      'current.carbon_dioxide': 'CO2',
-                     'current_units.carbon_dioxide' : 'carbon_dioxide_u', 
+                     'current_units.carbon_dioxide' : 'CO2_u', 
                      'current.nitrogen_dioxide': 'NO2',
-                     'current_units.nitrogen_dioxide' : 'nitrogen_dioxide_u', 
+                     'current_units.nitrogen_dioxide' : 'NO2_u', 
                      'current.sulphur_dioxide':'SO2',
-                     'current_units.sulphur_dioxide' : 'sulphur_dioxide_u'
+                     'current_units.sulphur_dioxide' : 'SO2_u'
                    }, inplace=True)
 
 df_to_show['date'] = df_to_show['time'].dt.strftime('%D')  # Den
@@ -89,10 +89,10 @@ new_order = ['town_name', 'latitude', 'longitude', 'elevation', 'date', 'timezon
        'interval', 'interval_u',
        'pm10', 'pm10_u',
        'pm2_5', 'pm2_5_u',
-       'CO','carbon_monoxide_u',
-       'CO2','carbon_dioxide_u',
-       'NO2','nitrogen_dioxide_u',
-       'SO2', 'sulphur_dioxide_u', 
+       'CO','CO_u',
+       'CO2','CO2_u',
+       'NO2','NO2_u',
+       'SO2', 'SO2_u', 
        'generationtime_ms']
 df_to_show = df_to_show[new_order]
 
@@ -136,7 +136,8 @@ fig_2 = px.bar(
     width=800,  # Šířka plátna
     height=550)
 
-fig_2.update_layout(title={"text": "Aktuální znečištění ovzduší v České republice", "x": 0.5})
+fig_2.update_layout(title={"text": "Aktuální znečištění ovzduší v České republice", "x": 0.5}                
+                    )           
    
 # Načtení obrázku jako base64
 def load_image(image_path):
@@ -144,7 +145,7 @@ def load_image(image_path):
         encoded_image = base64.b64encode(f.read()).decode()
     return f"data:image/jpeg;base64,{encoded_image}"
 
-image_path = 'foto.png'
+image_path = r'C:\Users\Stepankovi\Dropbox\CODERS\4 - Data Visualization\Day 4\Zdeny82_repo\Weather_dash_API\foto.png'
 encoded_image = load_image(image_path)
 
 # DataFrame ze slovníku
@@ -289,13 +290,16 @@ app.layout = dbc.Container(
                         dcc.Graph(
                             id="my-graph",
                             figure=fig,
-                            responsive=True
+                            responsive=False
                             
                         )
                     ),
-                    style={
-                        },
-                    xs=12, sm=12, md=6, lg=6, xl=6,  # Responsivní šířky sloupce
+                    style={"display": "flex",
+                        "flex-wrap": "wrap",
+                        "justify-content": "center",
+                        "align-items": "flex-start"
+                        }
+                    
                 ),
             
             # Sloupec pro graf II
@@ -304,20 +308,24 @@ app.layout = dbc.Container(
                         dcc.Graph(
                             id="my-graph_2",
                             figure=fig_2,
-                            responsive=True
+                            responsive=False
                             
                         )
                     ),
-                    style={
-                        },
-                    xs=12, sm=12, md=6, lg=6, xl=6,  # Responsivní šířky sloupce
+                    style={"display": "flex",
+                        "flex-wrap": "wrap",
+                        "justify-content": "center",
+                        "align-items": "center",
+                        
+                        }
+                    
                 ),
             ],
             style={
                         "display": "flex",
                         "flex-wrap": "wrap",
-                        "justify-content": "center",
-                        "align-items": "center"},
+                        "justify-content": "space-between",
+                        "align-items": "flex-start"},
             className="mb-4"  # Odsazení mezi řádky
         ),
 
@@ -356,16 +364,21 @@ app.layout = dbc.Container(
                     id="city-table",
                     columns=[{"name": col, "id": col} for col in df_to_show.columns],
                     data=[],
-                    
+                    style_table={
+                        "overflowX": "auto",  # Povolit horizontální posun
+                        "overflowY": "auto",  # Pov jakej posun kam a pro
+                    },
                     style_cell={"textAlign": "left"}  # Zarovnání textu doleva
                 ),
+                
+                width=12,
                 style={
                         "display": "flex",
-                        
-                        "justify-content": "center",  # Zarovnání obsahu na střed
-                    },
-                width=12,
-            )
+                        "flex-wrap": "wrap",
+                        "justify-content": "center",
+                        "align-items": "center"}  # Oddělení od ostatních prvků
+                        ),
+            className="mb-4",  # Odsazení mezi řádky
         )
     
     ],
@@ -484,5 +497,5 @@ def update_table(selected_city):
     filtered_df = df_to_show[df_to_show['town_name'] == selected_city]
     return filtered_df.to_dict("records")
 
-# if __name__ == "__main__":
-#   app.run_server(host="127.0.0.1", port=8050, debug=True)
+if __name__ == "__main__":
+   app.run_server(host="127.0.0.1", port=8050, debug=True)
