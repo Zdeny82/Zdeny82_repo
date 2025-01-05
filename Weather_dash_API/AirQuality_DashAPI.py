@@ -108,7 +108,7 @@ fig = px.scatter_mapbox(
     color_continuous_scale='bluered',  # Barevná škála od modré po červenou  
     hover_name='town_name',
     hover_data={"pm10": True, "pm2_5": True, "latitude": False, "longitude": False},
-    title=f'Aktuální znečištění ovzduší v České republice',
+    title=f"Aktuální znečištění ovzduší v České republice",
     mapbox_style="outdoors",
     zoom=5.8,
     center={"lat": 49.8175, "lon": 15.4730}  # Střed České republiky
@@ -132,7 +132,7 @@ fig_2 = px.bar(
     category_orders = df_to_show.sort_values(by="pm2_5", ascending=False),
     color_discrete_sequence=["#8C705F"],
     hover_name='town_name',
-    title=f'Největší města dle znečištění',
+    title=f"Největší města dle znečištění",
     width=800,  # Šířka plátna
     height=550)
 
@@ -219,8 +219,8 @@ app.layout = dbc.Container(
                             dbc.CardHeader(f"Praha {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'time'].values.squeeze()}"),
                             dbc.CardBody(
                                 [
-                                    html.H5(f'PM2.5: {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'pm2_5'].iloc[0]} µg/m³', className="card-title"),
-                                    html.P(f'PM10: {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'pm10'].iloc[0]} µg/m³', className="card-text"),
+                                    html.H5(f"PM2.5: {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'pm2_5'].iloc[0]} µg/m³", className="card-title"),
+                                    html.P(f"PM10: {df_to_show.loc[df_to_show['town_name'] == 'Praha', 'pm10'].iloc[0]} µg/m³?", className="card-text"),
                                 ]
                             ),
                         ],
@@ -235,8 +235,8 @@ app.layout = dbc.Container(
                             dbc.CardHeader(f"Brno {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'time'].values.squeeze()}"),
                             dbc.CardBody(
                                 [
-                                    html.H5(f'PM2.5: {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'pm2_5'].iloc[0]} µg/m³', className="card-title"),
-                                    html.P(f'PM10: {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'pm10'].iloc[0]} µg/m³', className="card-text"),
+                                    html.H5(f"PM2.5: {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'pm2_5'].iloc[0]} µg/m³", className="card-title"),
+                                    html.P(f"PM10: {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'pm10'].iloc[0]} µg/m³", className="card-text"),
                                 ]
                             ),
                         ],
@@ -412,7 +412,7 @@ def update_map(selected_indicator_bar):
     category_orders = df_to_show.sort_values(by=selected_indicator_bar, ascending=False),
     color_discrete_sequence=[color_scale_dictionary_bar[color_scale[selected_indicator_bar]]],
     hover_name='town_name',
-    title=f'Největší města dle znečištění')
+    title=f"Největší města dle znečištění")
     
     fig_2.update_layout(title={"text": "Největší města dle znečištění", "x": 0.5})
 
@@ -435,7 +435,7 @@ def update_map(selected_indicator):
         color_continuous_scale= color_scale_dictionary_scatter[color_scale[selected_indicator]],  # Barevná škála od modré po červenou  
         hover_name='town_name',
         hover_data={"pm10": True, "pm2_5": True, "latitude": False, "longitude": False},
-        title=f'Aktuální znečištění ovzduší v České republice',
+        title=f"Aktuální znečištění ovzduší v České republice",
         mapbox_style="outdoors",
         zoom=5.8,
         center={"lat": 49.8175, "lon": 15.4730}  # Střed České republiky
@@ -463,8 +463,8 @@ def update_dynamic_card(selected_city):
         dbc.CardHeader(f"{selected_city} {df_to_show.loc[df_to_show['town_name'] == 'Brno', 'time'].values.squeeze()}"),
         dbc.CardBody(
             [
-                html.H5(f'PM2.5: {df_to_show.loc[df_to_show['town_name'] == selected_city, 'pm2_5'].iloc[0]} µg/m³', className="card-title"),
-                html.P(f'PM10: {df_to_show.loc[df_to_show['town_name'] == selected_city, 'pm10'].iloc[0]} µg/m³', className="card-text"),
+                html.H5(f"PM2.5: {df_to_show.loc[df_to_show['town_name'] == selected_city, 'pm2_5'].iloc[0]} µg/m³", className="card-title"),
+                html.P(f"PM10: {df_to_show.loc[df_to_show['town_name'] == selected_city, 'pm10'].iloc[0]} µg/m³", className="card-text"),
             ]
         ),
     ]
