@@ -292,6 +292,11 @@ app.layout = dbc.Container(
                             
                         )
                     ),
+                    style={
+                        "display": "flex",
+                        "justify-content": "center",
+                        "flex-wrap": "wrap",
+                        "align-items": "center"},
                     width=6,  # Šířka sloupce pro graf (z celkových 12)
                 ),
             
@@ -307,6 +312,7 @@ app.layout = dbc.Container(
                     style={
                         "display": "flex",
                         "justify-content": "center",
+                        "flex-wrap": "wrap",
                         "align-items": "center"},
                     width=6, # Šířka sloupce pro graf (z celkových 12)
                 ),
