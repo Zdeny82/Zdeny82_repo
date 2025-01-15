@@ -1,0 +1,21 @@
+season,round,raceName,date,circuitId,circuitName,number,position,positionText,points,driverId,givenName,familyName,dateOfBirth,nationality,constructorId,name,nationality.1,results.grid,results.laps,results.status,Circ Count,Full Name
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,2,1,1,9,farina,Nino,Farina,1906-10-30,Italian,alfa,Alfa Romeo,Italian,1,70,Finished,Silverstone Circuit,Nino Farina
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,3,2,2,6,fagioli,Luigi,Fagioli,1898-06-09,Italian,alfa,Alfa Romeo,Italian,2,70,Finished,,Luigi Fagioli
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,4,3,3,4,reg_parnell,Reg,Parnell,1911-07-02,British,alfa,Alfa Romeo,Italian,4,70,Finished,,Reg Parnell
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,14,4,4,3,cabantous,Yves,Cabantous,1904-10-08,French,lago,Talbot-Lago,French,6,68,+2 Laps,,Yves Cabantous
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,15,5,5,2,rosier,Louis,Rosier,1905-11-05,French,lago,Talbot-Lago,French,9,68,+2 Laps,,Louis Rosier
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,12,6,6,0,gerard,Bob,Gerard,1914-01-19,British,era,ERA,British,13,67,+3 Laps,,Bob Gerard
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,11,7,7,0,harrison,Cuth,Harrison,1906-07-06,British,era,ERA,British,15,67,+3 Laps,,Cuth Harrison
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,6,9,9,0,hampshire,David,Hampshire,1917-12-29,British,maserati,Maserati,Italian,16,64,+6 Laps,,David Hampshire
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,10,10,10,0,shawe_taylor,Brian,Shawe Taylor,1915-01-28,British,maserati,Maserati,Italian,20,64,+6 Laps,,Brian Shawe Taylor
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,10,10,10,0,fry,Joe,Fry,1915-10-26,British,maserati,Maserati,Italian,20,64,+6 Laps,,Joe Fry
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,18,11,11,0,claes,Johnny,Claes,1916-08-11,Belgian,lago,Talbot-Lago,French,21,64,+6 Laps,,Johnny Claes
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,1,12,R,0,fangio,Juan,Fangio,1911-06-24,Argentine,alfa,Alfa Romeo,Italian,3,62,Oil leak,,Juan Fangio
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,23,13,N,0,kelly,Joe,Kelly,1913-03-13,Irish,alta,Alta,British,19,57,Not classified,,Joe Kelly
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,21,14,R,0,bira,Prince,Bira,1914-07-15,Thai,maserati,Maserati,Italian,5,49,Out of fuel,,Prince Bira
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,5,15,R,0,murray,David,Murray,1909-12-28,British,maserati,Maserati,Italian,18,44,Engine,,David Murray
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,24,16,R,0,crossley,Geoff,Crossley,1921-05-11,British,alta,Alta,British,17,43,Transmission,,Geoff Crossley
+1950,1,British Grand Prix,1950-05-13,silverstone,Silverstone Circuit,20,17,R,0,graffenried,Toulo,de Graffenried,1914-05-18,Swiss,maserati,Maserati,Italian,8,36,Engine,,Toulo de Graffenried
+1952,3,Belgian Grand Prix,1952-06-22,spa,Circuit de Spa-Francorchamps,18,8,8,0,claes,Johnny,Claes,1916-08-11,Belgian,gordini,Gordini,French,19,33,+3 Laps,,Johnny Claes
+1952,3,Belgian Grand Prix,1952-06-22,spa,Circuit de Spa-Francorchamps,24,11,11,0,macklin,Lance,Macklin,1919-09-02,British,hwm,HWM,British,14,32,+4 Laps,,Lance Macklin
+ 
