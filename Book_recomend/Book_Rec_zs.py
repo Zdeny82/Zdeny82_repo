@@ -304,7 +304,7 @@ def create_image_container(image_urls):
     Output("image_container", "children")],  # gallery
     [Input("search_box", "value"),  # Input book name
     Input("slider", "value"),
-    Input("author_filter", "value")]  # check box
+    Input("author_filter", "value")]  # check box 
 )
 
 def update_recommendations(chosen_book, slider_value, filter_author):
