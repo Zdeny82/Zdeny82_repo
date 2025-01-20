@@ -190,7 +190,7 @@ app.layout = dbc.Container(
                         step = 1,
                         marks={
                             i : {'label': str(i), 'style': {'color': 'black', 'font-size': '16px'}}
-                            for i in range(2, 11)
+                            for i in range(1, 11)
                         },
                         tooltip={
                             "placement": "bottom", "always_visible": True,
@@ -319,17 +319,27 @@ def update_recommendations(chosen_book, slider_value, filter_author):
     # Need a best match
     chosen_book = re.sub(r'\s+', ' ', chosen_book)
     name_of_the_book = df_raw.loc[df_raw['Book-Title'].str.contains(chosen_book, case=False, na=False, regex=False), 'Book-Title'] # Series
+    
     list_of_names_of_the_book = list(name_of_the_book)
-    best_match = process.extractOne(chosen_book, list_of_names_of_the_book) # tuple
-    name_of_the_book = best_match[0] # str
 
-    # 2. Tuple best_match emptiness check
-    if best_match == ():
+    # 2. a) list emptiness check - no book found in dataset
+    if not list_of_names_of_the_book:
+        table_data = [{"Suggested Books:": "Book is not in database."}]
+        color_style = {"color": "red"}
+        columns_style = [{"name": "Suggested Books:", "id": "Suggested Books:"}]
+        return [create_table(table_data, color_style, columns_style), None] 
+        
+    best_match = process.extractOne(chosen_book, list_of_names_of_the_book) # tuple, extract only one title best_match
+    
+    # 2. b) Tuple best_match check - # Checking the function call result to ensure it returned a valid match
+    if best_match is None:
         
         table_data = [{"Suggested Books:":"Book name is not in database."}]
         color_style= {"color": "red"}
         columns_style = [{"name": "Suggested Books:", "id": "Suggested Books:"}]
         return [create_table(table_data, color_style, columns_style), None] # 2. error message
+
+    name_of_the_book = best_match[0] # str, title on the first position
        
     # 3. a) Check if an author is selected 
     if filter_author:
